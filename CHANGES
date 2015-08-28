@@ -1,15 +1,6 @@
-Changes in 0.8.0 (Jan 15 2014)
-New Features:
-    - Auto guess config locations for icinga and naemon
-    - Performance improvements in Model 
-    - send_nsca moved to pynag.Utils 
-    - Model.filter() now uses Utils.grep() internally
-    - Utils.runCommand() now supports shell=False
-    
+Changes in 0.7.1 (Aug 28 2015)
 Bug Fixes:
-    - fix host.delete() not deleting services 
-    - Fixes for __in __notin and __contains in Utils.grep() 
-    - Bug fixes in send_nsca 
+    - pynag does not accept { and } in the plugin output
 
 Changes in 0.7.0 (Oct 14 2013)
 New Features:
@@ -34,8 +25,8 @@ New Features:
     - Better error messages when invalid livestatus syntax has been used
     - Utils.grep() new keywords __notstartswith and __notendswith
     - Model.ObjectDefinition now supports "in" operator
-    - Multiple performance tweaks for parsing 
-    - Plugins.PluginHelper.add_option() wrapper created 
+    - Multiple performance tweaks for parsing
+    - Plugins.PluginHelper.add_option() wrapper created
     - Performance tweaks in Utils.grep()
     - Thread-safety in  Parsing/Saving methods in Model and Parser
     - "in" operator implemented for Object Definitions
@@ -95,13 +86,13 @@ New Features:
       future.
     - pynag.Model - object definitions now implement sort()
     - pynag.Parsers.Logfiles added to parse nagios log files
-    
+
 Bugfixes:
     - Multiple doctest and unittest fixes and improvements to code quality
     - send_nsca - revert back to tabs instead of spaces
     - Fix unhandled traceback with pynag copy
     - Fix bug where directories with ending .cfg were parsed as files
-    - PluginHelper fixed in accordance to 
+    - PluginHelper fixed in accordance to
       http://nagiosplugins.org/rfc/new_threshold_syntax
 
 
@@ -122,7 +113,7 @@ Bugfixes:
     - Fix for correctly returning exit codes in Control.daemon()
     - Static file parser now skips line not in format of key=value
     - pynag.Parsers.status.get_hoststatus() and pynag.Parsers.status.get_servicestatus() should raise a ValueError rather than return it.
-    - timeperiod_name and alias were incorrectly saved 
+    - timeperiod_name and alias were incorrectly saved
     - Unhandled exception in contact.get_effective_services()
 
 Changes in 0.4.7 (Oct 26 2012)
@@ -209,12 +200,12 @@ Bugfixes:
     Recursive implemented for host.
 
     - Various fixes where nagios.cfg is not located in /etc/nagios/
-    
-    - Improvements to build process 
+
+    - Improvements to build process
 
     - Parsers: Exception handling loosened to not catch kill signals
 
-    - Model: calling filter() with __has_field now works on items seperated by ", "      
+    - Model: calling filter() with __has_field now works on items seperated by ", "
 
 Changes in 0.4.2
 
@@ -276,7 +267,7 @@ Changes in 0.4.1
     Modifications for python-2.3 support
 
     Parsers
-    typo fixed in edit_service 
+    typo fixed in edit_service
     Memory leak fix
     Added servicedependency and hostdependency support
 

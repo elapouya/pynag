@@ -1678,11 +1678,11 @@ class retention:
                 pass
             elif line[0] == "#" or line[0] == ';':
                 pass
-            elif line.find("{") != -1:
+            elif line.find("{") != -1 and 'plugin_output' not in line:
                 status = {}
                 status['meta'] = {}
                 status['meta']['type'] = line.split("{")[0].strip()
-            elif line.find("}") != -1:
+            elif line.find("}") != -1 and 'plugin_output' not in line:
                 # Status definition has finished, lets add it to
                 # self.data
                 if status['meta']['type'] not in self.data:
